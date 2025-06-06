@@ -1,4 +1,3 @@
-<!-- update: refresh -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,16 +17,6 @@
   }
 
   /* Matrix background animation */
-  #matrix {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: black;
-    z-index: -1;
-  }
-
-  /* Canvas fills full screen */
   #matrixCanvas {
     position: fixed;
     top: 0; left: 0;
@@ -35,6 +24,7 @@
     height: 100vh;
     display: block;
     z-index: -1;
+    background: black;
   }
 
   header {
@@ -94,10 +84,14 @@
     letter-spacing: 2px;
   }
 
-  p {
+  p, ul {
     font-size: 1.1rem;
     line-height: 1.5;
     color: #ddd;
+  }
+
+  ul {
+    padding-left: 20px;
   }
 
   /* Footer styling */
@@ -107,85 +101,8 @@
     color: #555;
     font-size: 0.9rem;
   }
-</style>
-</head>
-<body>
 
-<div id="matrix">
-  <canvas id="matrixCanvas"></canvas>
-</div>
-
-<header>
-  <h1 class="site-title">
-    <span class="golden-dark">Dark</span> <span class="golden-tech">Tech</span>
-  </h1>
-</header>
-
-<main>
-  <section id="about">
-    <h2>About Dark Tech</h2>
-    <p>
-      Dark Tech is the pulse of innovation in the shadows — where cutting-edge technology meets deep exploration. Dive into a curated arsenal of powerful tools, breakthrough insights, and expert resources designed to empower developers, hackers, and tech enthusiasts to conquer the digital frontier. From underground software to futuristic hardware, we bring you the raw essence of tech evolution, all wrapped in a sleek, immersive experience.
-    </p>
-  </section>
-  <section id="cybersecurity-courses">
-  <h2>Cyber Security Courses</h2>
-  <p>
-    Level up your skills with our expert-led Cyber Security courses. Whether you're a beginner wanting to understand the basics or a pro aiming to master advanced penetration testing and ethical hacking, we’ve got you covered.
-  </p>
-  <ul>
-    <li><strong>Introduction to Cyber Security:</strong> Learn the fundamentals of protecting digital assets and understanding cyber threats.</li>
-    <li><strong>Ethical Hacking & Penetration Testing:</strong> Hands-on training on offensive security tactics to find vulnerabilities before attackers do.</li>
-    <li><strong>Network Security Essentials:</strong> Deep dive into securing networks, firewalls, VPNs, and intrusion detection systems.</li>
-    <li><strong>Advanced Threat Analysis:</strong> Master techniques for threat hunting, malware analysis, and incident response.</li>
-  </ul>
-  <p>
-    Join thousands of learners and professionals who trust Dark Tech for practical, up-to-date security knowledge. Stay ahead in the fast-evolving cyber landscape.
-  </p>
-
-  <p>
-    🚀 Join our 
-    <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" 
-       style="
-         display: inline-block;
-         padding: 10px 20px;
-         background: linear-gradient(145deg, #ffcc00, #ff9900);
-         color: #222;
-         font-weight: bold;
-         border-radius: 8px;
-         box-shadow: 0 5px 0 #cc7a00, 0 10px 15px rgba(0,0,0,0.3);
-         text-decoration: none;
-         transition: all 0.2s ease;
-         ">
-      WhatsApp Channel
-    </a> 
-    for exclusive updates, free tips, and community support!
-  </p>
-
-  <a href="https://your-course-link.example" target="_blank" 
-     style="
-       display: inline-block;
-       padding: 12px 24px;
-       background: linear-gradient(145deg, #FFD700, #FFC107);
-       color: #222;
-       font-weight: bold;
-       border-radius: 8px;
-       box-shadow: 0 5px 0 #b38600, 0 10px 15px rgba(0,0,0,0.25);
-       text-decoration: none;
-       transition: all 0.2s ease;
-     ">
-    Explore Courses & Enroll Now
-  </a>
-
-  <style>
-    a:hover {
-      transform: translateY(2px);
-      box-shadow: 0 3px 0 #b38600, 0 6px 10px rgba(0,0,0,0.2);
-    }
-  </style>
-</section>
-</main>
-<style>
+  /* Floating sidebar */
   .floating-sidebar {
     position: fixed;
     top: 50%;
@@ -219,55 +136,116 @@
     color: #000;
     background: linear-gradient(135deg, #00ffd6, #00b3a3);
   }
+  .floating-btn[style*="cursor: default"] {
+    cursor: default;
+    opacity: 0.6;
+    box-shadow: none;
+    pointer-events: none;
+  }
 </style>
+</head>
+<body>
 
+<canvas id="matrixCanvas"></canvas>
+
+<header>
+  <h1 class="site-title">
+    <span class="golden-dark">Dark</span> <span class="golden-tech">Tech</span>
+  </h1>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About Dark Tech</h2>
+    <p>
+      Dark Tech is the pulse of innovation in the shadows — where cutting-edge technology meets deep exploration. Dive into a curated arsenal of powerful tools, breakthrough insights, and expert resources designed to empower developers, hackers, and tech enthusiasts to conquer the digital frontier. From underground software to futuristic hardware, we bring you the raw essence of tech evolution, all wrapped in a sleek, immersive experience.
+    </p>
+  </section>
+  <section id="cybersecurity-courses">
+    <h2>Cyber Security Courses</h2>
+    <p>
+      Level up your skills with our expert-led Cyber Security courses. Whether you're a beginner wanting to understand the basics or a pro aiming to master advanced penetration testing and ethical hacking, we’ve got you covered.
+    </p>
+    <ul>
+      <li><strong>Introduction to Cyber Security:</strong> Learn the fundamentals of protecting digital assets and understanding cyber threats.</li>
+      <li><strong>Ethical Hacking & Penetration Testing:</strong> Hands-on training on offensive security tactics to find vulnerabilities before attackers do.</li>
+      <li><strong>Network Security Essentials:</strong> Deep dive into securing networks, firewalls, VPNs, and intrusion detection systems.</li>
+      <li><strong>Advanced Threat Analysis:</strong> Master techniques for threat hunting, malware analysis, and incident response.</li>
+    </ul>
+    <p>
+      Join thousands of learners and professionals who trust Dark Tech for practical, up-to-date security knowledge. Stay ahead in the fast-evolving cyber landscape.
+    </p>
+
+    <p>
+      🚀 Join our
+      <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank"
+         style="
+           display: inline-block;
+           padding: 10px 20px;
+           background: linear-gradient(145deg, #ffcc00, #ff9900);
+           color: #222;
+           font-weight: bold;
+           border-radius: 8px;
+           box-shadow: 0 5px 0 #cc7a00, 0 10px 15px rgba(0,0,0,0.3);
+           text-decoration: none;
+           transition: all 0.2s ease;
+           ">
+        WhatsApp Channel
+      </a>
+      for exclusive updates, free tips, and community support!
+    </p>
+
+    <a href="https://your-course-link.example" target="_blank"
+       style="
+         display: inline-block;
+         padding: 12px 24px;
+         background: linear-gradient(145deg, #FFD700, #FFC107);
+         color: #222;
+         font-weight: bold;
+         border-radius: 8px;
+         box-shadow: 0 5px 0 #b38600, 0 10px 15px rgba(0,0,0,0.25);
+         text-decoration: none;
+         transition: all 0.2s ease;
+       ">
+      Explore Courses & Enroll Now
+    </a>
+  </section>
+</main>
+
+<!-- Floating sidebar with all 7 buttons -->
 <div class="floating-sidebar">
   <a href="https://mega.nz/folder/RvgHWBbD#Qr6CW1O4eezqilYbE9JCPA" target="_blank" class="floating-btn">💻 Cyber Security Courses</a>
   <a href="https://drive.google.com/drive/folders/1zD-JrP4sgIlAedjaLxAMdg_4ArF9IYyN" target="_blank" class="floating-btn">🛠️ Free Hacking Tools</a>
   <a href="https://drive.google.com/drive/folders/1shNOgbQ_iAfpCz-jPG-SAu5zZxVZiQ3a?usp=drive_link" target="_blank" class="floating-btn">📚 Ebooks & PDFs</a>
-  <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">📥 Download Zone</a>
-  <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" class="floating-btn">🎓 Join Telegram Channel</a>
+  <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">🎓 Join Telegram Channel</a>
   <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" class="floating-btn">💬 Join WhatsApp Channel</a>
+  <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">📥 Download Zone</a>
   <span class="floating-btn" style="cursor: default; opacity: 0.6;">🧪 Dark Web Sim (Coming Soon)</span>
-
 </div>
+
 <footer>
   &copy; 2025 Dark Tech.ONIMIX All rights reserved.
 </footer>
 
 <script>
-  // Matrix effect code with full page coverage and resize handling
-
   const canvas = document.getElementById('matrixCanvas');
   const ctx = canvas.getContext('2d');
 
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
+  canvas.width = width;
+  canvas.height = height;
+
   const letters = '01';
   const fontSize = 16;
+  const columns = Math.floor(width / fontSize);
 
-  let columns;
-  let drops = [];
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    columns = Math.floor(canvas.width / fontSize);
-    drops = [];
-
-    for (let x = 0; x < columns; x++) {
-      drops[x] = Math.random() * canvas.height;
-    }
-  }
-
-  resizeCanvas();
-
-  window.addEventListener('resize', () => {
-    resizeCanvas();
-  });
+  const drops = new Array(columns).fill(1);
 
   function draw() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, width, height);
 
     ctx.fillStyle = '#0F0';
     ctx.font = fontSize + 'px monospace';
@@ -276,16 +254,22 @@
       const text = letters.charAt(Math.floor(Math.random() * letters.length));
       ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      if (drops[i] * fontSize > height && Math.random() > 0.975) {
         drops[i] = 0;
       }
-
       drops[i]++;
     }
   }
 
-  setInterval(draw, 35);
+  setInterval(draw, 33);
+
+  window.addEventListener('resize', () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  });
 </script>
 
 </body>
-</html>
+</html>	
