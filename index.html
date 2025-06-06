@@ -181,6 +181,73 @@
   <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" class="floating-btn">💬 Join WhatsApp Channel</a>
   <span class="floating-btn" style="cursor: default; opacity: 0.6;">🧪 Dark Web Sim (Coming Soon)</span>
 </div>
+<!-- Hacker Animation & Fake Terminal -->
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; margin-top: 40px;">
+  
+  <!-- Lottie Hacker Animation -->
+  <lottie-player
+    src="https://assets2.lottiefiles.com/packages/lf20_b1vubngy.json"
+    background="transparent"
+    speed="1"
+    style="max-width: 100%; width: 300px; height: 300px;"
+    loop
+    autoplay>
+  </lottie-player>
+
+  <!-- Fake Terminal -->
+  <div id="fakeTerminal" style="
+    background: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 90%;
+    width: 600px;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+    white-space: pre-wrap;
+  ">
+  </div>
+</div>
+
+<!-- Lottie Script -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- Terminal Typing Simulation Script -->
+<script>
+  const terminal = document.getElementById("fakeTerminal");
+  const lines = [
+    "[+] Initializing shell...",
+    "[+] Connecting to dark web...",
+    "[+] Target IP: 192.168.0.101",
+    "[+] Port: 8080 - OPEN",
+    "[+] Injecting payload...",
+    "[+] Access granted! 🟢",
+    "[*] Extracting credentials...",
+    "[*] Username: root",
+    "[*] Password: ********",
+    "[+] Downloading data...",
+    "[+] Uploading virus.zip",
+    "[+] Logging off...",
+    "[✓] HACK COMPLETE"
+  ];
+
+  let index = 0;
+  function typeLine() {
+    if (index < lines.length) {
+      terminal.innerHTML += lines[index] + "\n";
+      terminal.scrollTop = terminal.scrollHeight;
+      index++;
+      setTimeout(typeLine, 800);
+    }
+  }
+  typeLine();
+</script>
 
 <footer>
   &copy; 2025 Dark Tech.ONIMIX All rights reserved.
