@@ -185,7 +185,51 @@
   </style>
 </section>
 </main>
+<style>
+  .floating-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+  .floating-btn {
+    background: linear-gradient(135deg, #00ffcc, #006666);
+    color: #000;
+    padding: 14px 22px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00ffcc;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .floating-btn:hover {
+    transform: rotateY(15deg) scale(1.1);
+    box-shadow: 0 0 25px #00ffd6, 0 0 35px #00b3a3;
+    color: #000;
+    background: linear-gradient(135deg, #00ffd6, #00b3a3);
+  }
+</style>
 
+<div class="floating-sidebar">
+  <a href="https://mega.nz/folder/RvgHWBbD#Qr6CW1O4eezqilYbE9JCPA" target="_blank" class="floating-btn">💻 Cyber Security Courses</a>
+  <a href="https://drive.google.com/drive/folders/1zD-JrP4sgIlAedjaLxAMdg_4ArF9IYyN" target="_blank" class="floating-btn">🛠️ Free Hacking Tools</a>
+  <a href="https://drive.google.com/drive/folders/1shNOgbQ_iAfpCz-jPG-SAu5zZxVZiQ3a?usp=drive_link" target="_blank" class="floating-btn">📚 Ebooks & PDFs</a>
+  <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">📥 Download Zone</a>
+  <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" class="floating-btn">🎓 Join Telegram Channel</a>
+  <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" class="floating-btn">💬 Join WhatsApp Channel</a>
+  <span class="floating-btn" style="cursor: default; opacity: 0.6;">🧪 Dark Web Sim (Coming Soon)</span>
+</div>
 <footer>
   &copy; 2025 Dark Tech.ONIMIX All rights reserved.
 </footer>
