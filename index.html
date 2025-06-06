@@ -21,15 +21,20 @@
   #matrix {
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: black;
     z-index: -1;
   }
 
-  canvas {
+  /* Canvas fills full screen */
+  #matrixCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
     display: block;
-    width: 100%;
-    height: 100%;
+    z-index: -1;
   }
 
   header {
@@ -123,52 +128,62 @@
       Dark Tech is the pulse of innovation in the shadows — where cutting-edge technology meets deep exploration. Dive into a curated arsenal of powerful tools, breakthrough insights, and expert resources designed to empower developers, hackers, and tech enthusiasts to conquer the digital frontier. From underground software to futuristic hardware, we bring you the raw essence of tech evolution, all wrapped in a sleek, immersive experience.
     </p>
   </section>
-<section id="join-channel" style="background: rgba(0,0,0,0.8); padding: 3rem 1rem; text-align: center; color: #FFD700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 0 0 10px #FFD700;">Join the DarkTech Revolution</h2>
-  <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">
-    Welcome to DarkTech — your ultimate tech hub where cutting-edge innovation meets real-world solutions. Dive deep into the latest tech tools, trends, and tutorials — all curated to empower YOU. Stay ahead in the digital age and be part of a thriving community of tech enthusiasts.  
-    <br /><br />
-    Don’t miss out — <strong>join our exclusive WhatsApp channel now</strong> for instant updates, tips, and tech breakthroughs delivered straight to your device!
+  <section id="cybersecurity-courses">
+  <h2>Cyber Security Courses</h2>
+  <p>
+    Level up your skills with our expert-led Cyber Security courses. Whether you're a beginner wanting to understand the basics or a pro aiming to master advanced penetration testing and ethical hacking, we’ve got you covered.
   </p>
-  <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #FFD700; color: #000; font-weight: bold; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-size: 1.3rem; box-shadow: 0 0 15px #FFD700;">
-    Join WhatsApp Channel
+  <ul>
+    <li><strong>Introduction to Cyber Security:</strong> Learn the fundamentals of protecting digital assets and understanding cyber threats.</li>
+    <li><strong>Ethical Hacking & Penetration Testing:</strong> Hands-on training on offensive security tactics to find vulnerabilities before attackers do.</li>
+    <li><strong>Network Security Essentials:</strong> Deep dive into securing networks, firewalls, VPNs, and intrusion detection systems.</li>
+    <li><strong>Advanced Threat Analysis:</strong> Master techniques for threat hunting, malware analysis, and incident response.</li>
+  </ul>
+  <p>
+    Join thousands of learners and professionals who trust Dark Tech for practical, up-to-date security knowledge. Stay ahead in the fast-evolving cyber landscape.
+  </p>
+
+  <p>
+    🚀 Join our 
+    <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" 
+       style="
+         display: inline-block;
+         padding: 10px 20px;
+         background: linear-gradient(145deg, #ffcc00, #ff9900);
+         color: #222;
+         font-weight: bold;
+         border-radius: 8px;
+         box-shadow: 0 5px 0 #cc7a00, 0 10px 15px rgba(0,0,0,0.3);
+         text-decoration: none;
+         transition: all 0.2s ease;
+         ">
+      WhatsApp Channel
+    </a> 
+    for exclusive updates, free tips, and community support!
+  </p>
+
+  <a href="https://your-course-link.example" target="_blank" 
+     style="
+       display: inline-block;
+       padding: 12px 24px;
+       background: linear-gradient(145deg, #FFD700, #FFC107);
+       color: #222;
+       font-weight: bold;
+       border-radius: 8px;
+       box-shadow: 0 5px 0 #b38600, 0 10px 15px rgba(0,0,0,0.25);
+       text-decoration: none;
+       transition: all 0.2s ease;
+     ">
+    Explore Courses & Enroll Now
   </a>
+
+  <style>
+    a:hover {
+      transform: translateY(2px);
+      box-shadow: 0 3px 0 #b38600, 0 6px 10px rgba(0,0,0,0.2);
+    }
+  </style>
 </section>
-
-<section id="cybersecurity" style="padding: 50px 20px; background: #121212; color: #f0e68c; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-    <h2 style="font-size: 2.8rem; margin-bottom: 15px; color: gold;">Cybersecurity Full Course — Learn and Master the Essentials</h2>
-    <p style="font-size: 1.2rem; line-height: 1.6; max-width: 700px; margin: 0 auto 25px;">
-      Cybersecurity is one of the most crucial skills today. Protect yourself and others by learning how to secure networks, data, and systems from cyber threats. Whether you’re a beginner or looking to sharpen your skills, this <strong>comprehensive course</strong> covers everything:
-    </p>
-    <ul style="text-align: left; display: inline-block; font-size: 1.1rem; margin-bottom: 30px; list-style: square inside; max-width: 500px;">
-      <li>Fundamentals of Cybersecurity</li>
-      <li>Network Security &amp; Firewalls</li>
-      <li>Ethical Hacking &amp; Penetration Testing</li>
-      <li>Malware Analysis &amp; Prevention</li>
-      <li>Cryptography Basics</li>
-      <li>Incident Response &amp; Forensics</li>
-      <li>Security Policies &amp; Best Practices</li>
-    </ul>
-    <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 25px;">
-      Stay ahead of cybercriminals and build a career in one of the fastest-growing fields!
-    </p>
-    <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" rel="noopener" style="background: gold; color: #121212; font-weight: 700; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-size: 1.2rem; box-shadow: 0 0 10px gold;">
-      Join our WhatsApp Channel for Updates
-    </a>
-  </div>
-</section>
-
-  <!-- Example other sections placeholders -->
-  <section id="tools">
-    <h2>Tech Tools</h2>
-    <p>Discover powerful tools and resources added daily to enhance your tech journey.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Get in touch for collaborations, inquiries, or sharing your favorite tech tools.</p>
-  </section>
 </main>
 
 <footer>
@@ -176,25 +191,38 @@
 </footer>
 
 <script>
-  // Matrix effect code
+  // Matrix effect code with full page coverage and resize handling
+
   const canvas = document.getElementById('matrixCanvas');
   const ctx = canvas.getContext('2d');
 
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
-
   const letters = '01';
   const fontSize = 16;
-  const columns = Math.floor(width / fontSize);
-  const drops = [];
 
-  for (let x = 0; x < columns; x++) {
-    drops[x] = Math.random() * height;
+  let columns;
+  let drops = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    columns = Math.floor(canvas.width / fontSize);
+    drops = [];
+
+    for (let x = 0; x < columns; x++) {
+      drops[x] = Math.random() * canvas.height;
+    }
   }
+
+  resizeCanvas();
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+  });
 
   function draw() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, width, height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = '#0F0';
     ctx.font = fontSize + 'px monospace';
@@ -203,7 +231,7 @@
       const text = letters.charAt(Math.floor(Math.random() * letters.length));
       ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      if (drops[i] * fontSize > height && Math.random() > 0.975) {
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
         drops[i] = 0;
       }
 
@@ -212,14 +240,7 @@
   }
 
   setInterval(draw, 35);
-
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
 </script>
 
 </body>
 </html>
-<!-- force rebuild -->
-<!-- rebuild -->
