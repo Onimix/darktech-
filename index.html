@@ -1,152 +1,128 @@
+<!-- update: complete version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dark Tech</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dark Tech</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    overflow-x: hidden;
-    font-family: 'Orbitron', sans-serif;
-    background: black;
-    color: #eee;
-    perspective: 1000px;
-  }
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      overflow-x: hidden;
+      font-family: 'Orbitron', sans-serif;
+      background: black;
+      color: #eee;
+      perspective: 1000px;
+    }
 
-  /* Matrix background animation */
-  #matrixCanvas {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    z-index: -1;
-    background: black;
-  }
+    #matrix {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: -1;
+    }
 
-  header {
-    text-align: center;
-    margin: 2rem 0 1rem 0;
-  }
+    #matrixCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: -1;
+    }
 
-  /* 3D rotating site title container */
-  .site-title {
-    font-size: 4rem;
-    font-weight: 900;
-    transform-style: preserve-3d;
-    animation: rotate3D 20s linear infinite;
-    display: inline-block;
-  }
+    header {
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+    }
 
-  .golden-dark {
-    color: #FFD700; /* gold */
-    text-shadow:
-      0 0 10px #FFD700,
-      0 0 20px #FFB800,
-      0 0 30px #FFB800;
-  }
+    .site-title {
+      font-size: 4rem;
+      font-weight: 900;
+      transform-style: preserve-3d;
+      animation: rotate3D 20s linear infinite;
+      display: inline-block;
+    }
 
-  .golden-tech {
-    color: #FFD700;
-    text-shadow:
-      0 0 10px #FFD700,
-      0 0 20px #FFB800,
-      0 0 30px #FFB800;
-  }
+    .golden-dark, .golden-tech {
+      color: #FFD700;
+      text-shadow:
+        0 0 10px #FFD700,
+        0 0 20px #FFB800,
+        0 0 30px #FFB800;
+    }
 
-  @keyframes rotate3D {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    50%  { transform: rotateX(360deg) rotateY(360deg); }
-    100% { transform: rotateX(0deg) rotateY(0deg); }
-  }
+    @keyframes rotate3D {
+      0%   { transform: rotateX(0deg) rotateY(0deg); }
+      50%  { transform: rotateX(360deg) rotateY(360deg); }
+      100% { transform: rotateX(0deg) rotateY(0deg); }
+    }
 
-  main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
 
-  section {
-    margin-bottom: 3rem;
-    background: rgba(0,0,0,0.6);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 15px #FFD700;
-  }
+    section {
+      margin-bottom: 3rem;
+      background: rgba(0,0,0,0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #FFD700;
+    }
 
-  h2 {
-    color: #FFD700;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+    h2 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-  p, ul {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #ddd;
-  }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
 
-  ul {
-    padding-left: 20px;
-  }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
 
-  /* Footer styling */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    color: #555;
-    font-size: 0.9rem;
-  }
+    .floating-btn {
+      position: absolute;
+      background: linear-gradient(135deg, #00ffcc, #006666);
+      color: #000;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 0 15px #00ffcc;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      white-space: nowrap;
+    }
 
-  /* Floating sidebar */
-  .floating-sidebar {
-    position: fixed;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 9999;
-  }
-  .floating-btn {
-    background: linear-gradient(135deg, #00ffcc, #006666);
-    color: #000;
-    padding: 14px 22px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px #00ffcc;
-    font-weight: 700;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    user-select: none;
-  }
-  .floating-btn:hover {
-    transform: rotateY(15deg) scale(1.1);
-    box-shadow: 0 0 25px #00ffd6, 0 0 35px #00b3a3;
-    color: #000;
-    background: linear-gradient(135deg, #00ffd6, #00b3a3);
-  }
-  .floating-btn[style*="cursor: default"] {
-    cursor: default;
-    opacity: 0.6;
-    box-shadow: none;
-    pointer-events: none;
-  }
-</style>
+    .floating-btn:hover {
+      transform: rotateY(15deg) scale(1.1);
+      box-shadow: 0 0 25px #00ffd6, 0 0 35px #00b3a3;
+      background: linear-gradient(135deg, #00ffd6, #00b3a3);
+    }
+  </style>
 </head>
 <body>
 
-<canvas id="matrixCanvas"></canvas>
+<div id="matrix">
+  <canvas id="matrixCanvas"></canvas>
+</div>
 
 <header>
   <h1 class="site-title">
@@ -158,68 +134,51 @@
   <section id="about">
     <h2>About Dark Tech</h2>
     <p>
-      Dark Tech is the pulse of innovation in the shadows — where cutting-edge technology meets deep exploration. Dive into a curated arsenal of powerful tools, breakthrough insights, and expert resources designed to empower developers, hackers, and tech enthusiasts to conquer the digital frontier. From underground software to futuristic hardware, we bring you the raw essence of tech evolution, all wrapped in a sleek, immersive experience.
+      Dark Tech is the pulse of innovation in the shadows — where cutting-edge technology meets deep exploration.
+      Dive into a curated arsenal of powerful tools, breakthrough insights, and expert resources designed to empower
+      developers, hackers, and tech enthusiasts. From underground software to futuristic hardware, we bring you
+      the raw essence of tech evolution.
     </p>
   </section>
+
   <section id="cybersecurity-courses">
-    <h2>Cyiber Security Courses</h2>
+    <h2>Cyber Security Courses</h2>
     <p>
-      Level up your skills with our expert-led Cyber Security courses. Whether you're a beginner wanting to understand the basics or a pro aiming to master advanced penetration testing and ethical hacking, we’ve got you covered.
+      Level up your skills with our expert-led Cyber Security courses. Whether you're a beginner or pro,
+      we’ve got you covered.
     </p>
     <ul>
-      <li><strong>Introduction to Cyber Security:</strong> Learn the fundamentals of protecting digital assets and understanding cyber threats.</li>
-      <li><strong>Ethical Hacking & Penetration Testing:</strong> Hands-on training on offensive security tactics to find vulnerabilities before attackers do.</li>
-      <li><strong>Network Security Essentials:</strong> Deep dive into securing networks, firewalls, VPNs, and intrusion detection systems.</li>
-      <li><strong>Advanced Threat Analysis:</strong> Master techniques for threat hunting, malware analysis, and incident response.</li>
+      <li><strong>Introduction to Cyber Security:</strong> Understand cyber threats and digital protection.</li>
+      <li><strong>Ethical Hacking & Penetration Testing:</strong> Learn offensive tactics to find vulnerabilities.</li>
+      <li><strong>Network Security Essentials:</strong> Master firewalls, VPNs, IDS, and more.</li>
+      <li><strong>Advanced Threat Analysis:</strong> Learn malware analysis and incident response.</li>
     </ul>
-    <p>
-      Join thousands of learners and professionals who trust Dark Tech for practical, up-to-date security knowledge. Stay ahead in the fast-evolving cyber landscape.
-    </p>
 
     <p>
       🚀 Join our
       <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank"
-         style="
-           display: inline-block;
-           padding: 10px 20px;
-           background: linear-gradient(145deg, #ffcc00, #ff9900);
-           color: #222;
-           font-weight: bold;
-           border-radius: 8px;
-           box-shadow: 0 5px 0 #cc7a00, 0 10px 15px rgba(0,0,0,0.3);
-           text-decoration: none;
-           transition: all 0.2s ease;
-           ">
-        WhatsApp Channel
-      </a>
-      for exclusive updates, free tips, and community support!
+         style="color:#FFD700; text-decoration:underline;">WhatsApp Channel</a>
+      for exclusive updates, tools, and giveaways!
     </p>
-
     <a href="https://your-course-link.example" target="_blank"
-       style="
-         display: inline-block;
-         padding: 12px 24px;
-         background: linear-gradient(145deg, #FFD700, #FFC107);
-         color: #222;
-         font-weight: bold;
-         border-radius: 8px;
-         box-shadow: 0 5px 0 #b38600, 0 10px 15px rgba(0,0,0,0.25);
-         text-decoration: none;
-         transition: all 0.2s ease;
-       ">
+       style="display:inline-block; margin-top: 1rem; padding: 10px 20px;
+              background: linear-gradient(145deg, #FFD700, #FFC107);
+              color: #222; font-weight: bold; border-radius: 8px;
+              box-shadow: 0 5px 0 #b38600, 0 10px 15px rgba(0,0,0,0.25);
+              text-decoration: none; transition: all 0.2s ease;">
       Explore Courses & Enroll Now
     </a>
   </section>
 </main>
 
-<!-- Floating sidebar with all 7 buttons -->
-<div class="floating-sidebar">
+<!-- Floating buttons moving around -->
+<div id="floatingButtonsContainer">
   <a href="https://mega.nz/folder/RvgHWBbD#Qr6CW1O4eezqilYbE9JCPA" target="_blank" class="floating-btn">💻 Cyber Security Courses</a>
   <a href="https://drive.google.com/drive/folders/1zD-JrP4sgIlAedjaLxAMdg_4ArF9IYyN" target="_blank" class="floating-btn">🛠️ Free Hacking Tools</a>
   <a href="https://drive.google.com/drive/folders/1shNOgbQ_iAfpCz-jPG-SAu5zZxVZiQ3a?usp=drive_link" target="_blank" class="floating-btn">📚 Ebooks & PDFs</a>
+  <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">📥 Download Zone</a>
   <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">🎓 Join Telegram Channel</a>
   <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" class="floating-btn">💬 Join WhatsApp Channel</a>
-  <a href="https://t.me/+JMBspRMMT74zYWZl" target="_blank" class="floating-btn">📥 Download Zone</a>
   <span class="floating-btn" style="cursor: default; opacity: 0.6;">🧪 Dark Web Sim (Coming Soon)</span>
 </div>
 
@@ -228,48 +187,93 @@
 </footer>
 
 <script>
+  // Matrix background effect setup
   const canvas = document.getElementById('matrixCanvas');
   const ctx = canvas.getContext('2d');
-
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-
-  canvas.width = width;
-  canvas.height = height;
-
   const letters = '01';
   const fontSize = 16;
-  const columns = Math.floor(width / fontSize);
+  let columns;
+  let drops = [];
 
-  const drops = new Array(columns).fill(1);
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    columns = Math.floor(canvas.width / fontSize);
+    drops = [];
+    for(let x = 0; x < columns; x++) {
+      drops[x] = Math.random() * canvas.height / fontSize;
+    }
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
 
-  function draw() {
+  function drawMatrix() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, width, height);
-
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#0F0';
     ctx.font = fontSize + 'px monospace';
 
-    for (let i = 0; i < drops.length; i++) {
+    for(let i = 0; i < drops.length; i++) {
       const text = letters.charAt(Math.floor(Math.random() * letters.length));
       ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      if (drops[i] * fontSize > height && Math.random() > 0.975) {
+      if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
         drops[i] = 0;
       }
       drops[i]++;
     }
   }
+  setInterval(drawMatrix, 35);
 
-  setInterval(draw, 33);
+  // Floating buttons movement logic
+  const container = document.getElementById('floatingButtonsContainer');
+  const buttons = container.querySelectorAll('.floating-btn');
+  const speedRange = 0.3; // max speed for movement
 
-  window.addEventListener('resize', () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
+  // Initialize buttons with random positions and speed vectors
+  buttons.forEach(btn => {
+    btn.style.left = Math.random() * (window.innerWidth - btn.offsetWidth) + 'px';
+    btn.style.top = Math.random() * (window.innerHeight - btn.offsetHeight) + 'px';
+    btn.speedX = (Math.random() - 0.5) * speedRange;
+    btn.speedY = (Math.random() - 0.5) * speedRange;
   });
+
+  function moveButtons() {
+    buttons.forEach(btn => {
+      let left = parseFloat(btn.style.left);
+      let top = parseFloat(btn.style.top);
+
+      // Update position
+      left += btn.speedX;
+      top += btn.speedY;
+
+      // Bounce off edges horizontally
+      if(left < 0) {
+        left = 0;
+        btn.speedX *= -1;
+      } else if(left + btn.offsetWidth > window.innerWidth) {
+        left = window.innerWidth - btn.offsetWidth;
+        btn.speedX *= -1;
+      }
+
+      // Bounce off edges vertically
+      if(top < 0) {
+        top = 0;
+        btn.speedY *= -1;
+      } else if(top + btn.offsetHeight > window.innerHeight) {
+        top = window.innerHeight - btn.offsetHeight;
+        btn.speedY *= -1;
+      }
+
+      btn.style.left = left + 'px';
+      btn.style.top = top + 'px';
+    });
+    requestAnimationFrame(moveButtons);
+  }
+
+  moveButtons();
+
 </script>
 
 </body>
-</html>	
+</html>
