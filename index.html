@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dark Tech</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    overflow-x: hidden;
+    font-family: 'Orbitron', sans-serif;
+    background: black;
+    color: #eee;
+    perspective: 1000px;
+  }
+
+  /* Matrix background animation */
+  #matrix {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black;
+    z-index: -1;
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  header {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+  }
+
+  /* 3D rotating site title container */
+  .site-title {
+    font-size: 4rem;
+    font-weight: 900;
+    transform-style: preserve-3d;
+    animation: rotate3D 20s linear infinite;
+    display: inline-block;
+  }
+
+  .golden-dark {
+    color: #FFD700; /* gold */
+    text-shadow:
+      0 0 10px #FFD700,
+      0 0 20px #FFB800,
+      0 0 30px #FFB800;
+  }
+
+  .golden-tech {
+    color: #FFD700;
+    text-shadow:
+      0 0 10px #FFD700,
+      0 0 20px #FFB800,
+      0 0 30px #FFB800;
+  }
+
+  @keyframes rotate3D {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }
+    50%  { transform: rotateX(360deg) rotateY(360deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg); }
+  }
+
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+    background: rgba(0,0,0,0.6);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #FFD700;
+  }
+
+  h2 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ddd;
+  }
+
+  /* Footer styling */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    color: #555;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<div id="matrix">
+  <canvas id="matrixCanvas"></canvas>
+</div>
+
+<header>
+  <h1 class="site-title">
+    <span class="golden-dark">Dark</span> <span class="golden-tech">Tech</span>
+  </h1>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About Dark Tech</h2>
+    <p>
+      Dark Tech is the pulse of innovation in the shadows — where cutting-edge technology meets deep exploration. Dive into a curated arsenal of powerful tools, breakthrough insights, and expert resources designed to empower developers, hackers, and tech enthusiasts to conquer the digital frontier. From underground software to futuristic hardware, we bring you the raw essence of tech evolution, all wrapped in a sleek, immersive experience.
+    </p>
+  </section>
+<section id="join-channel" style="background: rgba(0,0,0,0.8); padding: 3rem 1rem; text-align: center; color: #FFD700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 0 0 10px #FFD700;">Join the DarkTech Revolution</h2>
+  <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">
+    Welcome to DarkTech — your ultimate tech hub where cutting-edge innovation meets real-world solutions. Dive deep into the latest tech tools, trends, and tutorials — all curated to empower YOU. Stay ahead in the digital age and be part of a thriving community of tech enthusiasts.  
+    <br /><br />
+    Don’t miss out — <strong>join our exclusive WhatsApp channel now</strong> for instant updates, tips, and tech breakthroughs delivered straight to your device!
+  </p>
+  <a href="https://whatsapp.com/channel/0029Vb6Hq0K7YSdCXtjgzt1x" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #FFD700; color: #000; font-weight: bold; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-size: 1.3rem; box-shadow: 0 0 15px #FFD700;">
+    Join WhatsApp Channel
+  </a>
+</section>
+
+  <!-- Example other sections placeholders -->
+  <section id="tools">
+    <h2>Tech Tools</h2>
+    <p>Discover powerful tools and resources added daily to enhance your tech journey.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Get in touch for collaborations, inquiries, or sharing your favorite tech tools.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Dark Tech.ONIMIX All rights reserved.
+</footer>
+
+<script>
+  // Matrix effect code
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  const letters = '01';
+  const fontSize = 16;
+  const columns = Math.floor(width / fontSize);
+  const drops = [];
+
+  for (let x = 0; x < columns; x++) {
+    drops[x] = Math.random() * height;
+  }
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
