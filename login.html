@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Dark Tech</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; background: #000; color: #0f0; text-align: center; padding: 50px;">
+  <h2>Login</h2>
+  <input id="email" type="email" placeholder="Email" /><br><br>
+  <input id="password" type="password" placeholder="Password" /><br><br>
+  <button onclick="login()">Login</button>
+  <p>Don't have an account? <a href="signup.html" style="color: #0ff;">Sign up</a></p>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY_HERE",
+      authDomain: "dark-tech-auth.firebaseapp.com",
+      projectId: "dark-tech-auth",
+      storageBucket: "dark-tech-auth.appspot.com",
+      messagingSenderId: "322320133509",
+      appId: "YOUR_APP_ID_HERE"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(user => {
+          alert("Login successful!");
+          window.location.href = "https://onimix.github.io/darktech-/index.html";
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    }
+  </script>
+</body>
+</html>
